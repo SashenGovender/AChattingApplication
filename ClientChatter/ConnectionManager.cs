@@ -8,7 +8,7 @@ namespace ClientChatter
   public class ConnectionManager : IConnectionManager
   {
     private readonly HubConnection _connection;
-
+    private string _username;
     public ConnectionManager(HubConnection connection)
     {
       _connection = connection;
@@ -80,7 +80,14 @@ namespace ClientChatter
       Console.WriteLine($"Call to 'SendMessageToAll' method on hub/server ");
       try
       {
-        await _connection.InvokeAsync("SendMessageToAll", "Hi");
+        var message = new ChatRoomMessage
+        {
+          UserName = _username,
+          Message = "Hello everyone",
+          TimeSent = DateTimeOffset.UtcNow
+        };
+
+        await _connection.InvokeAsync("SendMessageToAll", message);
       }
       catch (Exception ex)
       {
@@ -112,6 +119,12 @@ namespace ClientChatter
       //await Task.Delay(new Random().Next(0, 5) * 1000);
       //await _connection.StartAsync();
       return Task.CompletedTask;
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    public void SetUserName(string[] args)
+    {
+      _username = args[0];
     }
     //------------------------------------------------------------------------------------------------------------------------------------------------
   }

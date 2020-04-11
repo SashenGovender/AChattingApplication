@@ -21,14 +21,14 @@ Please follow the below steps to setup the solution on your machine
 * Restore Nuget Packages
 * Build Solution
 * Next, Navigate to the console bin folder and execute the ClientChatter.exe using the command prompt. This allows you to set the clients user name
-...
+```
 ClientChatter.exe emily
-... 
+```
 * Start the hub server by running ChattingServer project without debugging
 * Lastly, open in a new chrome tab the JavaScript client
-...
+```
 http://localhost:5000/homepage.html
-...
+```
 
 ## Deployment
 Add additional notes about how to deploy this on a live system

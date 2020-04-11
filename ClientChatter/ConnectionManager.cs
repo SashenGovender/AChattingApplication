@@ -8,7 +8,6 @@ namespace ClientChatter
   public class ConnectionManager : IConnectionManager
   {
     private readonly HubConnection _connection;
-    private string _username;
     public ConnectionManager(HubConnection connection)
     {
       _connection = connection;
@@ -75,18 +74,11 @@ namespace ClientChatter
     //------------------------------------------------------------------------------------------------------------------------------------------------
     //The client has SendAsync which is fire - and - forget and InvokeAsync which waits for a completion message from the server.https://github.com/aspnet/SignalR/issues/1300
     //Invokes a hub method on the server using the specified method name.
-    public async Task Send_MessageToAll_ToServer()
+    public async Task Send_MessageToAll_ToServer(ChatRoomMessage message)
     {
       Console.WriteLine($"Call to 'SendMessageToAll' method on hub/server ");
       try
       {
-        var message = new ChatRoomMessage
-        {
-          UserName = _username,
-          Message = "Hello everyone",
-          TimeSent = DateTimeOffset.UtcNow
-        };
-
         await _connection.InvokeAsync("SendMessageToAll", message);
       }
       catch (Exception ex)
@@ -121,11 +113,5 @@ namespace ClientChatter
       return Task.CompletedTask;
     }
 
-    //------------------------------------------------------------------------------------------------------------------------------------------------
-    public void SetUserName(string[] args)
-    {
-      _username = args[0];
-    }
-    //------------------------------------------------------------------------------------------------------------------------------------------------
   }
 }

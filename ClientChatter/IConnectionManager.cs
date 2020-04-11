@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using ClientChatter.Model;
 
 namespace ClientChatter
 {
@@ -7,6 +8,6 @@ namespace ClientChatter
     void RegisterEventHandlers();
     void RegisterClientMethods();
     Task StartConnection();
-    Task Send_MessageToAll_ToServer();
+    Task Send_MessageToAll_ToServer(ChatRoomMessage message);
   }
 }

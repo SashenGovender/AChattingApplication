@@ -39,12 +39,19 @@ namespace ClientChatter
       //Define methods the server/hub calls. Must be specified but before starting the connection.
 
       Console.WriteLine($"Registering 'Welcome' Method Handler ");
-      _connection.On<string, string>("welcome", (user, message) =>
+      _connection.On<ChatRoomMessage>("Welcome", (message) =>
       {
-        Console.WriteLine($"Message Received");
-        Console.WriteLine($"User: {user} - Message: {message}");
+        Console.WriteLine($"Message Received from hub");
+        Console.WriteLine($"From: {message.UserName} - Sent: {message.TimeSent} - Message: {message.Message}");
       });
 
+
+      Console.WriteLine($"Registering 'ReceiveMessage' Method Handler ");
+      _connection.On<ChatRoomMessage>("ReceiveMessage", (message) =>
+      {
+        Console.WriteLine($"Message Received from hub");
+        Console.WriteLine($"From: {message.UserName} - Sent: {message.TimeSent} - Message: {message.Message}");
+      });
     }
     //------------------------------------------------------------------------------------------------------------------------------------------------
 

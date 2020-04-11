@@ -1,0 +1,147 @@
+﻿html {
+    background-image: url('../images/homepage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+h1.heading {
+    text-align: center;
+    color: orange;
+    font-size: 50px;
+}
+
+h2.subHeading {
+    text-align: center;
+    color: lightgreen;
+    font-size: 20px;
+}
+
+label.userName {
+    text-align:left;
+    color: white;
+    font-size: 50px;
+    top: 100%;
+    left: 0%;
+    position: relative;
+}
+
+/*Button*****************************************************************************************/
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: absolute;
+    width: 11%;
+    height: 5%;
+    border-radius: 10px;
+}
+
+.buttonStartConnection {
+    border: 1px solid black;
+    top: 30%;
+    left: 5%;
+}
+
+.buttonCloseConnection{
+    border: 1px solid black;
+    top: 38%;
+    left: 5%;
+}
+
+.buttonSendMessage {
+    border: 1px solid black;
+    top: 46%;
+    left: 10%;
+    width: 6%;
+    height: 13%;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 1px 1px;
+}
+
+.buttonStartConnection:hover {
+    background-color: black;
+    color: lightblue;
+    filter: brightness(150%);
+}
+
+.buttonCloseConnection:hover {
+    background-color: black;
+    color: lightblue;
+    filter: brightness(150%);
+}
+
+.buttonSendMessage:hover {
+    background-color: black;
+    color: lightblue;
+    filter: brightness(150%);
+}
+/*End Button*****************************************************************************************/
+
+/*Radio Button*****************************************************************************************/
+/* The container */
+.container {
+    display: inline-block;
+    position: absolute;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+    width: 4%;
+    height: 4%;
+    color: Black;
+}
+
+.containerAll {
+    top: 48%;
+    left: 5%;
+}
+
+.containerGroup {
+    top: 52%;
+    left: 5%;
+}
+
+.containerUser {
+    top: 56%;
+    left: 5%;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: grey;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: green;
+}
+/*End Radio Button*****************************************************************************************/

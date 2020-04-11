@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/modal.css">
+
+    <title>Premium Chat</title>
+</head>
+<body>
+    <label class="userName" id="userNameLabelId"></label>
+    <h1 class="heading">Premium Lounge </h1>
+    <h2 class="subHeading">A place to discover meaningful conversations</h2>
+
+
+
+    <!-- The Modal -->
+    <div id="userNameModelId" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <label style="text-align: left">Please set your username</label>
+            <input type="text" class="modelInputUsername" id="userNameInputId">
+            <input type="button" class="modalContinueButton" id="continueBtnId" onclick="CompleteSetup()" value="Continue" />
+        </div>
+    </div>
+
+    <div id="operations">
+        <input type="button" class="button buttonStartConnection" id="startConnectionBtnId" onclick="StartConnection()" value="Start Connection" />
+        <input type="button" class="button buttonCloseConnection" id="closeConnectionBtnId" onclick="CloseConnection()" value="Close Connection" />
+        <input type="button" class="button buttonSendMessage" id="sendMessageBtnId" onclick="SendMessage()" value="Send Message" />
+
+        <label class="container containerAll">
+            All
+            <input type="radio" checked="checked" name="radio" id="allRadionId">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container containerGroup">
+            Group
+            <input type="radio" name="radio" id="groupRadioId">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container containerUser">
+            User
+            <input type="radio" name="radio" id="userRadioId">
+            <span class="checkmark"></span>
+        </label>
+
+    </div>
+
+    <script type="text/javascript">
+        //Display a modal for the user to set their username
+        function DisplayModal() {
+
+            var modal = document.getElementById("userNameModelId"); // Get the modal
+            modal.style.display = "block"; //Display the model
+
+            var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        }
+
+        function CompleteSetup() {
+            // remove the model
+            var modal = document.getElementById("userNameModelId");
+            modal.style.display = "none";
+
+            var userName = (document.getElementById("userNameInputId")).value;
+
+            var userNameLabel = (document.getElementById("userNameLabelId"));
+            userNameLabel.innerHTML = userName;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        function StartConnection() {
+
+        }
+
+        function CloseConnection() {
+
+        }
+
+        function SendMessage() {
+
+        }
+
+    </script>
+
+    <!--    Main-->
+    <script>
+        setTimeout(DisplayModal, 50);
+
+    </script>
+
+</body>
+
+</html>

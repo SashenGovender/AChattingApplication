@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChattingServer.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +24,9 @@ namespace ChattingServer
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddRazorPages();
+      services.AddSignalR();
+
+      //services.AddSingleton<ChatTracker>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,11 +48,11 @@ namespace ChattingServer
 
       app.UseRouting();
 
-      app.UseAuthorization();
+      app.UseAuthentication();
 
       app.UseEndpoints(endpoints =>
       {
-        endpoints.MapRazorPages();
+        endpoints.MapHub<ChatRoomHub>("/chatroom");
       });
     }
   }

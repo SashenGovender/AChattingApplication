@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClientChatter
+namespace ClientChatter.Model
 {
 
   /// <summary>

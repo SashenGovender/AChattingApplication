@@ -48,26 +48,35 @@ label.userName {
 
 .buttonStartConnection {
     border: 1px solid black;
-    top: 30%;
+    top: 40%;
     left: 5%;
 }
 
 .buttonCloseConnection{
     border: 1px solid black;
-    top: 38%;
+    top: 48%;
     left: 5%;
 }
 
 .buttonSendMessage {
     border: 1px solid black;
-    top: 46%;
-    left: 10%;
-    width: 6%;
-    height: 13%;
-    word-wrap: break-word;
+    top: 70%;
+    left: 5%;
     white-space: normal;
     padding: 1px 1px;
 }
+
+/*
+.buttonSendMessage {
+    border: 1px solid black;
+    top: 56%;
+    left: 10%;
+    width: 6%;
+    height: 13%;
+    white-space: normal;
+    padding: 1px 1px;
+}
+*/
 
 .buttonStartConnection:hover {
     background-color: black;
@@ -103,18 +112,19 @@ label.userName {
 }
 
 .containerAll {
-    top: 48%;
+    top: 58%;
     left: 5%;
 }
 
 .containerGroup {
-    top: 52%;
+    top: 62%;
     left: 5%;
 }
 
 .containerUser {
-    top: 56%;
+    top: 66%;
     left: 5%;
+
 }
 
 /* Hide the browser's default radio button */
@@ -132,7 +142,7 @@ label.userName {
     height: 20px;
     width: 20px;
     background-color: white;
-    border-radius: 50%;
+       border-radius: 10px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -145,3 +155,65 @@ label.userName {
     background-color: green;
 }
 /*End Radio Button*****************************************************************************************/
+
+/*Text box*****************************************************************************************/
+.groupTextbox {
+    display: inline-block;
+    position: absolute;
+    font-size: 15px;
+    width: 5%;
+    height: 2%;
+    color: Black;
+    top: 62%;
+    left: 11%;
+    border-radius: 5px;
+}
+
+.userTextbox {
+    display: inline-block;
+    position: absolute;
+    font-size: 15px;
+    width: 5%;
+    height: 2%;
+    color: Black;
+    top: 66%;
+    left: 11%;
+    border-radius: 5px;
+}
+/*End Textbox*****************************************************************************************/
+
+
+/*Text Areas *****************************************************************************************/
+.textarea {
+    display: inline-block;
+    position: absolute;
+    padding: 1px 1px;
+    cursor: pointer;
+    font-size: 17px;
+    color: Black;
+}
+
+.textareaClients {
+    width: 20%;
+    height: 20%;
+    color: Black;
+    top: 40%;
+    left: 25%;
+}
+
+.textareaMessage {
+    width: 20%;
+    height: 20%;
+    top: 65%;
+    left: 25%;
+}
+
+.textareaChatMessages {
+    width: 29%;
+    height: 48%;
+    top: 40%;
+    left: 60%;
+}
+/*Text Areas End *****************************************************************************************/
+
+

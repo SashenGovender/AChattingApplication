@@ -67,55 +67,13 @@
         <textarea id="chatMsgTextAreaId" rows="23" cols="60"></textarea>
     </div>
     <!-- The Chat History Area End-->
-    <!-- Modal Logic-->
-    <script type="text/javascript">
-        //Display a modal for the user to set their username
-        function DisplayModal() {
+<script src="../lib/signalr/signalr.min.js"></script>
+    <script type="text/javascript" src="../js/signalrClientManager.js"></script>
+    <script type="text/javascript" src="../js/homepagesetup.js"></script>
 
-            var modal = document.getElementById("userNameModelId"); // Get the modal
-            modal.style.display = "block"; //Display the model
 
-            var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
-        }
 
-        function CompleteSetup() {
-            // remove the model
-            var modal = document.getElementById("userNameModelId");
-            modal.style.display = "none";
 
-            var userName = (document.getElementById("userNameInputId")).value;
-
-            //set username at top left
-            var userNameLabel = (document.getElementById("userNameLabelId"));
-            userNameLabel.innerHTML = userName;
-        }
-
-    </script>
-    <!-- Modal Logic End-->
-    <!-- Button Logic-->
-    <script type="text/javascript">
-        function StartConnection() {
-
-        }
-
-        function CloseConnection() {
-
-        }
-
-        function SendMessage() {
-
-        }
-    </script>
-<!-- Button Logic End-->
-    <!--    Main-->
-    <script>
-        setTimeout(DisplayModal, 50);
-
-    </script>
 
 </body>
 

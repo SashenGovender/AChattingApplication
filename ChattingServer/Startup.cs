@@ -26,8 +26,11 @@ namespace ChattingServer
     {
       //services.AddRazorPages();
 
-      services.AddSignalR();
-
+      services.AddSignalR()
+        .AddJsonProtocol(options =>
+        {
+          options.PayloadSerializerOptions.PropertyNamingPolicy = null;
+        });
       //services.AddSingleton<ChatTracker>();
     }
 

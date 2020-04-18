@@ -53,7 +53,7 @@ function ConnectionManager() {
     }
 
     this.CloseConnection = function() {
-        _clientChatterConnection.close()
+        _clientChatterConnection.stop()
             .catch((err) => console.error(err.toString()));
     }
 

@@ -8,7 +8,7 @@
 </head>
 <body>
     <label class="userName" id="userNameLabelId"></label>
-    <h1 class="heading">Premium Lounge </h1>
+    <h1 class="heading">Premium Lounge Live Chat</h1>
     <h2 class="subHeading">A place to discover meaningful conversations</h2>
 
     <!-- The Modal -->
@@ -26,12 +26,12 @@
     <!-- The Button Operations Center -->
     <div id="operations">
         <input type="button" class="button buttonStartConnection" id="startConnectionBtnId" onclick="StartConnection()" value="Start Connection" />
-        <input type="button" class="button buttonCloseConnection" id="closeConnectionBtnId" onclick="CloseConnection()" value="Close Connection" />
-        <input type="button" class="button buttonSendMessage" id="sendMessageBtnId" onclick="SendMessage()" value="Send Message" />
+        <input type="button" class="button buttonCloseConnection" id="closeConnectionBtnId" onclick="CloseConnection()" value="Close Connection" disabled />
+        <input type="button" class="button buttonSendMessage" id="sendMessageBtnId" onclick="SendMessage()" value="Send Message" disabled />
 
         <label class="container containerAll">
             All
-            <input type="radio" checked="checked" name="radio" id="allRadionId">
+            <input type="radio" checked="checked" name="radio" id="allRadioId">
             <span class="checkmark"></span>
         </label>
         <label class="container containerGroup">
@@ -40,7 +40,7 @@
             <input type="radio" name="radio" id="groupRadioId">
             <span class="checkmark"></span>
         </label>
-        <input type="text" id="groupTeaxtboxId" class="groupTextbox">
+        <input type="text" id="groupTextboxId" class="groupTextbox">
 
         <label class="container containerUser">
             User
@@ -51,24 +51,25 @@
     </div>
     <!-- The Button Operations Center End-->
     <!-- The Messages Area and Client Area-->
-    <div class="textarea textareaMessage">
+    <div class="textarea textareaMessage" id="textAreaMessageId">
         <label style="color:white" for="messageTextAreaId" col>Message To Send</label>
-        <textarea id="messageTextAreaId" rows="9" cols="41"></textarea>
+        <textarea id="messageTextAreaId" rows="9" cols="41">please type a message... </textarea>
     </div>
 
-    <div class="textarea textareaClients">
+    <div class="textarea textareaClients" id="textAreaClientsId">
         <label style="color:white" for="clientsTextAreaId">Connected Clients</label>
         <textarea id="clientsTextAreaId" rows="9" cols="41"></textarea>
     </div>
     <!-- The Messages Area and Client Area-->
     <!-- The Chat History Area -->
-    <div class="textarea textareaChatMessages">
+    <div class="textarea textareaChatMessages" id="textAreaMessageHistoryId">
         <label style="color:white" for="chatMsgTextAreaId">Chat Messages</label>
         <textarea id="chatMsgTextAreaId" rows="23" cols="60"></textarea>
     </div>
     <!-- The Chat History Area End-->
-<script src="../lib/signalr/signalr.min.js"></script>
-    <script type="text/javascript" src="../js/signalrClientManager.js"></script>
+    <script src="../lib/signalr/signalr.min.js"></script>
+    <script type="text/javascript" src="../js/Models/ChatRoomMessage.js"></script>
+    <script type="text/javascript" src="../js/ConnectionManager.js"></script>
     <script type="text/javascript" src="../js/homepagesetup.js"></script>
 
 

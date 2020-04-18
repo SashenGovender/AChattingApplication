@@ -20,36 +20,36 @@ namespace ChattingServer.Hubs
     //------------------------------------------------------------------------------------------------------------------------------------------------
     // Send Messages to all connected clients
     [HubMethodName("SendMessageToAll")]
-    public async Task SendMessage(string userName, string userMessage)
+    public async Task SendMessage(ChatRoomMessage chatMessage)
     {
-      var message = new ChatRoomMessage
-      {
-        UserName = userName,
-        Message = userMessage,
-        TimeSent = DateTimeOffset.UtcNow
-      };
+      //var message = new ChatRoomMessage
+      //{
+      //  UserName = userName,
+      //  Message = userMessage,
+      //  TimeSent = DateTimeOffset.UtcNow
+      //};
 
       // Broadcast to all clients
-      await Clients.All.ReceiveMessage(message);
+      await Clients.All.ReceiveMessage(chatMessage);
     }
     //------------------------------------------------------------------------------------------------------------------------------------------------
 
     //------------------------------------------------------------------------------------------------------------------------------------------------
     // sends a message to all clients in the SignalR Users group
     [HubMethodName("SendMessageToUserGroup")]
-    public async Task SendMessageUserGroup(string userMessage)
+    public async Task SendMessageUserGroup(string groupName, ChatRoomMessage chatMessage)
     {
-      var group = "uniquegroup";
-      //group = GetGroup(Context.ConnectionId);
+      //var group = "uniquegroup";
+      ////group = GetGroup(Context.ConnectionId);
 
-      var message = new ChatRoomMessage
-      {
-        UserName = "chatbot",
-        Message = userMessage,
-        TimeSent = DateTimeOffset.UtcNow
-      };
+      //var message = new ChatRoomMessage
+      //{
+      //  UserName = "chatbot",
+      //  Message = userMessage,
+      //  TimeSent = DateTimeOffset.UtcNow
+      //};
 
-      await Clients.Group(group).ReceiveMessage(message);
+      await Clients.Group(groupName).ReceiveMessage(chatMessage);
 
     }
     //------------------------------------------------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ namespace ChattingServer.Hubs
 
       var message = new ChatRoomMessage
       {
-        UserName = "chatbot",
+        UserName = "ChatServer",
         Message = "Hi there, Welcome to Premium Chat",
         TimeSent = DateTimeOffset.UtcNow
       };

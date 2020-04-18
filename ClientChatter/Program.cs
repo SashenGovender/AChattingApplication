@@ -12,6 +12,12 @@ namespace ClientChatter
     [SuppressMessage("Style", "IDE0060:Remove unused parameter")]
     static async Task Main(string[] args)
     {
+      if (args.Length == 0)
+      {
+        Console.WriteLine("No Username provided");
+        return;
+      }
+      Console.WriteLine($"Received Client Name: {args[0]}");
 
       //Create Hub Connection
       var connection = HubConnectionCreater.CreateHubConnection();
@@ -24,6 +30,7 @@ namespace ClientChatter
       await connectionManager.StartConnection();
 
       //await connectionManager.Send_MessageToAll_ToServer(BuildMessage(args[0]));
+      Console.ReadLine();
     }
 
     public static ChatRoomMessage BuildMessage(string name)

@@ -11,7 +11,7 @@ namespace ClientChatter
       //Create Hub Connection
       var connection =
         new HubConnectionBuilder() //create a signal r hub. Requires Microsoft.AspNetCore.SignalR.Client nuget
-          .WithUrl("http://localhost:5000/chatroom") //The URL the connection will use.
+          .WithUrl("https://localhost:44333/chatroom") //The URL the connection will use.
           .ConfigureLogging(logging =>
           {
             logging.AddConsole(); //Add a console logger for signal r. Requires Microsoft.Extensions.Logging.Console nuget

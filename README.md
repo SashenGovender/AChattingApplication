@@ -20,18 +20,13 @@ Please follow the below steps to setup the solution on your machine
 * Pull the code from github into your ide
 * Restore Nuget Packages
 * Build Solution
-* Next, Navigate to the console bin folder and execute the ClientChatter.exe using the command prompt. This allows you to set the clients user name
-```
-ClientChatter.exe emily
-```
+* Next, Navigate ClientChatter project and edit the path variable to point to your c# console bin executable.
 * Start the hub server by running ChattingServer project without debugging
-* Lastly, open in a new chrome tab the JavaScript client
+* Open in a new chrome tab the JavaScript client
+* Finally, Execute 'RunClientChatter.bat' file. to create 2 c# console clients 
 ```
-http://localhost:5000/homepage.html
+http://localhost:58878/html/homepage.html
 ```
-
-## Deployment
-Add additional notes about how to deploy this on a live system
 
 ## Resources
 All images were sourced from various interest sites
